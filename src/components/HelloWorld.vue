@@ -1,33 +1,20 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 defineProps<{
   msg: string;
 }>();
+
+const count = ref(0);
 </script>
 
 <template>
   <div>
     <h1 class="text-3xl border-b border-neutral-200 pb-2 mb-2">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a
-        href="https://vite.dev/"
-        class="underline underline-offset-4 text-blue-400 hover:text-blue-600"
-        target="_blank"
-        rel="noopener"
-      >
-        Vite
-      </a>
-      +
-      <a
-        href="https://vuejs.org/"
-        class="underline underline-offset-4 text-blue-400 hover:text-blue-600"
-        target="_blank"
-        rel="noopener"
-      >
-        Vue 3
-      </a>
-      . What's next?
-    </h3>
+    <h3 class="border-b border-neutral-200 pb-2 mb-2">Checkout this counter:</h3>
+    <div>
+      <el-button type="primary" @click="count++">Count: {{ count }}</el-button>
+    </div>
   </div>
 </template>
 
